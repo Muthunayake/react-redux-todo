@@ -49,7 +49,7 @@ class AddTask extends Component {
     };
 
     formHasErrors = () => {
-        const {title, description, priority} = this.state.inputs;
+        const {title, priority} = this.state.inputs;
         let errors = {};
 
         if (!title) errors.title = true;
