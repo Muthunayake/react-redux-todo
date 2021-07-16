@@ -1,0 +1,38 @@
+.badge {
+	text-transform: capitalize;
+}
+.list-item {
+	padding: .7rem 0rem;
+	border-bottom: 1px solid #dee2e6;
+	label {
+		color: #797a7a;
+		font-size: 15px;
+	}
+}
+.item-icon {
+	padding: 3px;
+	color: #ccc;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+}
+.list-badge {
+	display: inline-block;
+	padding: .35em .65em;
+	font-size: .75em;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .60rem;
+}
+.badge-low {
+	background-color: #198754;
+}
+.badge-high {
+	background-color: #dc3545;
+}
+.badge-medium {
+	background-color: #ffc107;
+}
