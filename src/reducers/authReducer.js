@@ -1,7 +1,6 @@
-import { LOGIN, LOGOUT, LOGIN_ERROR} from "../constants/actionType";
+import {LOGIN, LOGOUT, LOGIN_ERROR} from "../constants/actionType";
 
-let authState = JSON.parse(localStorage.getItem('auth'));
-
+let authState = JSON.parse(localStorage.getItem("auth"));
 const defaultState = {loggedIn: false, user: {}, error: false};
 const initState = authState ? authState : defaultState;
 

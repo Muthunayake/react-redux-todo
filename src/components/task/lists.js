@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import AddTask from "./addTask";
 import ListItem from "./listItem";
 
-import '../../styles/todo-lists.scss'
+import "../../styles/todo-lists.scss";
 
 class Lists extends Component {
     constructor(){
@@ -13,15 +13,15 @@ class Lists extends Component {
         this.state = {
             open: false
         }
-    }
+    };
 
     onOpenModal = () => {
         this.setState({open: true});
-    }
+    };
 
     onCloseModal = () => {
         this.setState({open: false});
-    }
+    };
 
     render() {
         const {lists} = this.props;
@@ -56,14 +56,14 @@ class Lists extends Component {
                 <AddTask open={this.state.open} onCloseModal={this.onCloseModal}/>
             </div>
         );
-    }
+    };
 }
 
 const mapStateToProps = state => {
     return {
         lists: state.task.lists
     }
-}
+};
 
 export default connect(mapStateToProps)(Lists);
 

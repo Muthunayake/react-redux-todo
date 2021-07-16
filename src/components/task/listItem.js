@@ -1,4 +1,4 @@
-import '../../styles/list-item.scss';
+import "../../styles/list-item.scss";
 
 const listItem = (props) => {
     const {item} = props;

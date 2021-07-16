@@ -1,11 +1,9 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-
-// import {taskListAction} from "../../store/storeSlice";
-import {addTask} from "../../actions/taskActions";
-
 import {Modal} from "react-responsive-modal";
 import Select from "react-select";
+
+import {addTask} from "../../actions/taskActions";
 import {message as ErrorMessage} from "../../lang/en/error";
 
 const defaultStates = {
@@ -19,9 +17,9 @@ const defaultStates = {
         priority: false,
     },
     priority: [
-        { value: "high", label: "High" },
-        { value: "medium", label: "Medium" },
-        { value: "low", label: "Low" },
+        {value: "high", label: "High"},
+        {value: "medium", label: "Medium"},
+        {value: "low", label: "Low"},
     ],
 };
 
@@ -29,15 +27,11 @@ class AddTask extends Component {
     constructor() {
         super();
 
-        this.state = {
-            ...defaultStates,
-        };
+        this.state = {...defaultStates};
     };
 
     setDefaultStates = () => {
-        this.setState({
-            ...defaultStates,
-        });
+        this.setState({...defaultStates});
     };
 
     changeInputError = (type, elem, val) => {
@@ -52,7 +46,7 @@ class AddTask extends Component {
     formElementChange = (name, value) => {
         this.changeInputError("errors", name, false);
         this.changeInputError("inputs", name, value);
-    }
+    };
 
     formHasErrors = () => {
         const {title, description, priority} = this.state.inputs;
@@ -64,7 +58,7 @@ class AddTask extends Component {
         this.setState({errors});
 
         return Object.values(errors).includes(true);
-    }
+    };
 
     onSaveTask = () => {
         if(this.formHasErrors()) return;

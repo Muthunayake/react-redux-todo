@@ -19,33 +19,28 @@ class Login extends Component {
     constructor (props) {
         super();
 
-        this.state = {
-            ...defaultStates,
-        };
-
+        this.state = {...defaultStates};
         this.clearAuth(props);
-    }
+    };
 
     clearAuth = ({doLogout}) => {
         doLogout();
-    }
+    };
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate() {
         const {auth, history} = this.props;
 
         if (auth.loggedIn === true) history.push('/');
-    }
+    };
 
     setDefaultStates = () => {
-        this.setState({
-            ...defaultStates,
-        });
+        this.setState({...defaultStates});
     };
     
     formElementChange = (name, value) => {
         this.changeInputError("errors", name, false);
         this.changeInputError("inputs", name, value);
-    }
+    };
 
     changeInputError = (type, elem, val) => {
         this.setState({
@@ -66,13 +61,13 @@ class Login extends Component {
         this.setState({errors});
 
         return Object.values(errors).includes(true);
-    }
+    };
 
     onLogin = () => {
         if (this.formHasErrors()) return;
 
         this.props.doLogin(this.state.inputs);
-    }
+    };
 
     render(){
         const {inputs, errors} = this.state;
@@ -95,7 +90,8 @@ class Login extends Component {
                                         onChange={(event) => this.formElementChange('username', event.target.value)}
                                     />
                                     {
-                                        errors.username && <label className="error">{ErrorMessage.username}</label>
+                                        errors.username && 
+                                        <label className="error">{ErrorMessage.username}</label>
                                     }
                                 </div>                                            
                                 <div className="mb-3">
@@ -109,7 +105,8 @@ class Login extends Component {
                                         onChange={(event) => this.formElementChange('password', event.target.value)}
                                     />
                                     {
-                                        errors.password && <label className="error">{ErrorMessage.password}</label>
+                                        errors.password && 
+                                        <label className="error">{ErrorMessage.password}</label>
                                     }
                                 </div>
                                 {
@@ -118,7 +115,9 @@ class Login extends Component {
                                         {ErrorMessage.credentials}
                                     </div>
                                 }
-                                <button type="button" className="btn btn-primary float-end mt-3" onClick={this.onLogin}>Login</button>
+                                <button type="button" className="btn btn-primary float-end mt-3" onClick={this.onLogin}>
+                                    Login
+                                </button>
                             </div>
                             <div className="card-footer text-muted border-0 bg-transparent px-5">
                                 <div className="alert alert-warning" role="alert">
@@ -132,7 +131,7 @@ class Login extends Component {
                 </div>
             </div>
         );
-    }
+    };
 };
 
 const mapStateToProps = state => ({

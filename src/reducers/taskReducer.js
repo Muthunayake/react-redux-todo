@@ -1,4 +1,4 @@
-import {ADD_TASK} from '../constants/actionType';
+import {ADD_TASK} from "../constants/actionType";
 
 const initState = {
     lists: [],

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Lists from "../task/lists";
 import NavBar from "../header/navBar";
 

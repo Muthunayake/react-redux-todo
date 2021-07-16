@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, {Component} from "react";
+import {connect} from "react-redux";
 
-import { doLogout } from "../../services/authService";
-import '../../styles/nav-bar.scss';
+import {doLogout} from "../../services/authService";
+import "../../styles/nav-bar.scss";
 
 class NavBar extends Component {
     onLogout = () => {
         const { doLogout, history } = this.props;
+
         doLogout();
         history.replace("/login");
     };
@@ -35,7 +36,7 @@ class NavBar extends Component {
                 </div>
             </div>
         );
-    }
+    };
 }
 
 const mapStateToProps = (state) => ({
